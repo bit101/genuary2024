@@ -4,12 +4,24 @@ package days
 import (
 	"github.com/bit101/bitlib/blmath"
 	cairo "github.com/bit101/blcairo"
+	"github.com/bit101/blcairo/target"
 )
 
 // Day26 is for genuary 26
+var Day26 = Day{
+	ImageWidth:  800,
+	ImageHeight: 800,
+	VideoWidth:  400,
+	VideoHeight: 400,
+	VideoTime:   2,
+	RenderFrame: Day26Render,
+	Target:      target.Video,
+}
+
+// Day26Render is for genuary 26
 //
 //revive:disable-next-line:unused-parameter
-func Day26(context *cairo.Context, width, height, percent float64) {
+func Day26Render(context *cairo.Context, width, height, percent float64) {
 	context.BlackOnWhite()
 	context.Save()
 	context.TranslateCenter()

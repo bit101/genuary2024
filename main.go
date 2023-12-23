@@ -11,31 +11,30 @@ import (
 
 func main() {
 
-	renderTarget := target.Video
 	day := "day01"
-	renderFrame := renderFrames[day]
+	theDay := daymap[day]
 
-	switch renderTarget {
+	switch theDay.Target {
 	case target.Image:
 		outfile := fmt.Sprintf("out/%s.png", day)
-		render.Image(800, 800, outfile, renderFrame, 0.0)
+		render.Image(theDay.ImageWidth, theDay.ImageHeight, outfile, theDay.RenderFrame, 0.0)
 		render.ViewImage(outfile)
 		break
 
 	case target.Video:
 		outfile := fmt.Sprintf("out/%s.mp4", day)
-		seconds := 2
+		seconds := theDay.VideoTime
 		fps := 30
-		w := 400.0
-		h := 400.0
-		render.Frames(w, h, seconds*fps, "out/frames", renderFrame)
+		w := theDay.VideoWidth
+		h := theDay.VideoHeight
+		render.Frames(w, h, seconds*fps, "out/frames", theDay.RenderFrame)
 		render.ConvertToVideo("out/frames", outfile, w, h, fps, seconds)
 		render.PlayVideo(outfile)
 		break
 	}
 }
 
-var renderFrames = map[string]render.FrameFunc{
+var daymap = map[string]days.Day{
 	"day01": days.Day01,
 	"day02": days.Day02,
 	"day03": days.Day03,
