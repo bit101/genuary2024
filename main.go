@@ -6,7 +6,7 @@ import (
 
 	"github.com/bit101/blcairo/render"
 	"github.com/bit101/blcairo/target"
-	"github.com/bit101/genuary2023/days"
+	"github.com/bit101/genuary2024/days"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-// Package days contains genuary 2023 code for each day.
+// Package days contains genuary 2024 code for each day.
 package days
 
 import (
