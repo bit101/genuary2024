@@ -19,6 +19,7 @@ var Day23 = Day{
 }
 
 // Day23Render is for genuary 23
+// 32×32.
 //
 //revive:disable-next-line:unused-parameter
 func Day23Render(context *cairo.Context, width, height, percent float64) {

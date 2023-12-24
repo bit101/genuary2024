@@ -19,6 +19,7 @@ var Day12 = Day{
 }
 
 // Day12Render is for genuary 12
+// Lava lamp.
 //
 //revive:disable-next-line:unused-parameter
 func Day12Render(context *cairo.Context, width, height, percent float64) {

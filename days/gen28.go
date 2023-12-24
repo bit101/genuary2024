@@ -19,6 +19,7 @@ var Day28 = Day{
 }
 
 // Day28Render is for genuary 28
+// Skeuomorphism.
 //
 //revive:disable-next-line:unused-parameter
 func Day28Render(context *cairo.Context, width, height, percent float64) {

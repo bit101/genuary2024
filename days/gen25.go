@@ -19,6 +19,7 @@ var Day25 = Day{
 }
 
 // Day25Render is for genuary 25
+// If you like generative art, you probably have some photos on your phone of cool looking patterns, textures, shapes or things that you’ve seen. You might have even thought, “I should try to recreate this with code”. Today is the day.
 //
 //revive:disable-next-line:unused-parameter
 func Day25Render(context *cairo.Context, width, height, percent float64) {

@@ -19,6 +19,7 @@ var Day24 = Day{
 }
 
 // Day24Render is for genuary 24
+// Impossible objects (undecided geometry).
 //
 //revive:disable-next-line:unused-parameter
 func Day24Render(context *cairo.Context, width, height, percent float64) {

@@ -19,6 +19,7 @@ var Day19 = Day{
 }
 
 // Day19Render is for genuary 19
+// Flocking.
 //
 //revive:disable-next-line:unused-parameter
 func Day19Render(context *cairo.Context, width, height, percent float64) {

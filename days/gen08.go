@@ -19,6 +19,7 @@ var Day08 = Day{
 }
 
 // Day08Render is for genuary 8
+// Chaotic system.
 //
 //revive:disable-next-line:unused-parameter
 func Day08Render(context *cairo.Context, width, height, percent float64) {

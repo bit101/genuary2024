@@ -19,6 +19,7 @@ var Day18 = Day{
 }
 
 // Day18Render is for genuary 18
+// Bauhaus.
 //
 //revive:disable-next-line:unused-parameter
 func Day18Render(context *cairo.Context, width, height, percent float64) {

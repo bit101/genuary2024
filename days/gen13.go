@@ -19,6 +19,7 @@ var Day13 = Day{
 }
 
 // Day13Render is for genuary 13
+// Wobbly function day.
 //
 //revive:disable-next-line:unused-parameter
 func Day13Render(context *cairo.Context, width, height, percent float64) {

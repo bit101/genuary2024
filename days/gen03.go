@@ -19,6 +19,7 @@ var Day03 = Day{
 }
 
 // Day03Render is for genuary 3
+// Droste effect.
 //
 //revive:disable-next-line:unused-parameter
 func Day03Render(context *cairo.Context, width, height, percent float64) {

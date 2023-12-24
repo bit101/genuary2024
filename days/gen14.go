@@ -19,6 +19,7 @@ var Day14 = Day{
 }
 
 // Day14Render is for genuary 14
+// Less than 1KB artwork.
 //
 //revive:disable-next-line:unused-parameter
 func Day14Render(context *cairo.Context, width, height, percent float64) {

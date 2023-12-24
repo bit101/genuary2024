@@ -19,6 +19,7 @@ var Day16 = Day{
 }
 
 // Day16Render is for genuary 16
+// Draw 10 000 of something.
 //
 //revive:disable-next-line:unused-parameter
 func Day16Render(context *cairo.Context, width, height, percent float64) {

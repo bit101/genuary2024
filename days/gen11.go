@@ -19,6 +19,7 @@ var Day11 = Day{
 }
 
 // Day11Render is for genuary 11
+// In the style of Anni Albers (1899-1994).
 //
 //revive:disable-next-line:unused-parameter
 func Day11Render(context *cairo.Context, width, height, percent float64) {

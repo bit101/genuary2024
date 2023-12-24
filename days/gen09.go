@@ -19,6 +19,7 @@ var Day09 = Day{
 }
 
 // Day09Render is for genuary 9
+// ASCII.
 //
 //revive:disable-next-line:unused-parameter
 func Day09Render(context *cairo.Context, width, height, percent float64) {

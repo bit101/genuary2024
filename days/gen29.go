@@ -19,6 +19,7 @@ var Day29 = Day{
 }
 
 // Day29Render is for genuary 29
+// Signed Distance Functions (if we keep trying once per year, eventually we will be good at it!).
 //
 //revive:disable-next-line:unused-parameter
 func Day29Render(context *cairo.Context, width, height, percent float64) {

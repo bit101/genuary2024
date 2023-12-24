@@ -19,6 +19,7 @@ var Day20 = Day{
 }
 
 // Day20Render is for genuary 20
+// Generative typography.
 //
 //revive:disable-next-line:unused-parameter
 func Day20Render(context *cairo.Context, width, height, percent float64) {

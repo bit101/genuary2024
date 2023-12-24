@@ -19,6 +19,7 @@ var Day31 = Day{
 }
 
 // Day31Render is for genuary 31
+// Generative music / Generative audio / Generative sound.
 //
 //revive:disable-next-line:unused-parameter
 func Day31Render(context *cairo.Context, width, height, percent float64) {

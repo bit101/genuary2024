@@ -19,6 +19,7 @@ var Day06 = Day{
 }
 
 // Day06Render is for genuary 6
+// Screensaver.
 //
 //revive:disable-next-line:unused-parameter
 func Day06Render(context *cairo.Context, width, height, percent float64) {

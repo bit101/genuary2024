@@ -19,6 +19,7 @@ var Day22 = Day{
 }
 
 // Day22Render is for genuary 22
+// Point - line - plane.
 //
 //revive:disable-next-line:unused-parameter
 func Day22Render(context *cairo.Context, width, height, percent float64) {

@@ -19,6 +19,7 @@ var Day10 = Day{
 }
 
 // Day10Render is for genuary 10
+// Hexagonal.
 //
 //revive:disable-next-line:unused-parameter
 func Day10Render(context *cairo.Context, width, height, percent float64) {

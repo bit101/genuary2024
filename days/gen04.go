@@ -19,6 +19,7 @@ var Day04 = Day{
 }
 
 // Day04Render is for genuary 4
+// Pixels.
 //
 //revive:disable-next-line:unused-parameter
 func Day04Render(context *cairo.Context, width, height, percent float64) {

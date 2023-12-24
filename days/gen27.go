@@ -19,6 +19,7 @@ var Day27 = Day{
 }
 
 // Day27Render is for genuary 27
+// Code for one hour. At the one hour mark, you’re done.
 //
 //revive:disable-next-line:unused-parameter
 func Day27Render(context *cairo.Context, width, height, percent float64) {

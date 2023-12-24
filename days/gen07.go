@@ -19,6 +19,7 @@ var Day07 = Day{
 }
 
 // Day07Render is for genuary 7
+// Progress bar / indicator / loading animation.
 //
 //revive:disable-next-line:unused-parameter
 func Day07Render(context *cairo.Context, width, height, percent float64) {

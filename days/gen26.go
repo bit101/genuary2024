@@ -19,6 +19,7 @@ var Day26 = Day{
 }
 
 // Day26Render is for genuary 26
+// Grow a seed.
 //
 //revive:disable-next-line:unused-parameter
 func Day26Render(context *cairo.Context, width, height, percent float64) {

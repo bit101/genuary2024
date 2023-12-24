@@ -19,6 +19,7 @@ var Day30 = Day{
 }
 
 // Day30Render is for genuary 30
+// Shaders.
 //
 //revive:disable-next-line:unused-parameter
 func Day30Render(context *cairo.Context, width, height, percent float64) {
