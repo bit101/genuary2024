@@ -19,7 +19,7 @@ var Day05 = Day{
 }
 
 // Day05Render is for genuary 5
-// No palettes. Generative colors, procedural colors, emergent colors.
+// In the style of Vera Molnár (1924-2023).
 //
 //revive:disable-next-line:unused-parameter
 func Day05Render(context *cairo.Context, width, height, percent float64) {
