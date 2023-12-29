@@ -5,6 +5,7 @@ import (
 	"github.com/bit101/bitlib/blmath"
 	cairo "github.com/bit101/blcairo"
 	"github.com/bit101/blcairo/target"
+	"github.com/bit101/genuary2024/util"
 )
 
 // Day03 is for genuary 3
@@ -71,4 +72,5 @@ func Day03Render(context *cairo.Context, width, height, percent float64) {
 
 	context.FillRectangle(0, 0, width, height)
 
+	util.Stampit(context, "genuary2024 day 3. Droste effect")
 }

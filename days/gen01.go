@@ -10,6 +10,7 @@ import (
 	"github.com/bit101/bitlib/random"
 	cairo "github.com/bit101/blcairo"
 	"github.com/bit101/blcairo/target"
+	"github.com/bit101/genuary2024/util"
 )
 
 // Day01 is for genuary 2
@@ -141,4 +142,5 @@ func Day01Render(context *cairo.Context, width, height, percent float64) {
 			context.FillPoint(p.X, p.Y, 0.5)
 		}
 	}
+	util.Stampit(context, "genuary2024 day 1. Particles, lots of them")
 }

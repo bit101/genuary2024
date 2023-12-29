@@ -8,6 +8,7 @@ import (
 	"github.com/bit101/bitlib/geom"
 	cairo "github.com/bit101/blcairo"
 	"github.com/bit101/blcairo/target"
+	"github.com/bit101/genuary2024/util"
 )
 
 // Day02 is for genuary 2
@@ -44,4 +45,5 @@ func Day02Render(context *cairo.Context, width, height, percent float64) {
 			context.FillRectangle(x, y, res, res)
 		}
 	}
+	util.Stampit(context, "genuary2024 day 2. No palettes")
 }
