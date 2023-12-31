@@ -32,7 +32,7 @@ func Day06Render(context *cairo.Context, width, height, percent float64) {
 	margin := 20.0
 	screenWidth := w - margin
 	screenHeight := h - margin
-	context.ClearGray(0.15)
+	context.ClearGray(0.25)
 	context.Superellipse(w/2, h/2, screenWidth/2, screenHeight/2, 8.0)
 	context.Clip()
 
