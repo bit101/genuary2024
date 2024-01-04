@@ -77,5 +77,5 @@ func Day06Render(context *cairo.Context, width, height, percent float64) {
 		context.StrokeLine(width-75, y, width-15, y)
 	}
 
-	util.Stampit(context, "genuary2024 day y. Screensaver")
+	util.Stampit(context, "genuary2024 day 6. Screensaver")
 }
