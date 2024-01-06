@@ -1,0 +1,1 @@
+convert -gaussian-blur 0.01 -quality 24% day14.png result.jpg
