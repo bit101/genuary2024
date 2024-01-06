@@ -2,7 +2,12 @@
 package days
 
 import (
+	"math"
+
 	"github.com/bit101/bitlib/blmath"
+	"github.com/bit101/bitlib/geom"
+	"github.com/bit101/bitlib/noise"
+	"github.com/bit101/bitlib/random"
 	cairo "github.com/bit101/blcairo"
 	"github.com/bit101/blcairo/target"
 )
@@ -13,7 +18,7 @@ var Day12 = Day{
 	ImageHeight: 800,
 	VideoWidth:  400,
 	VideoHeight: 400,
-	VideoTime:   2,
+	VideoTime:   10,
 	RenderFrame: Day12Render,
 	Target:      target.Video,
 }
@@ -23,13 +28,33 @@ var Day12 = Day{
 //
 //revive:disable-next-line:unused-parameter
 func Day12Render(context *cairo.Context, width, height, percent float64) {
-	context.BlackOnWhite()
-	context.Save()
-	context.TranslateCenter()
-	context.DrawAxes(0.25)
-	r := blmath.LerpSin(percent, 50, width/2)
-	sphere := cairo.NewSphere(0, 0, r, 1, 0, 0)
-	sphere.SetShadowColor(0.2, 0, 0)
-	sphere.Draw(context)
-	context.Restore()
+	context.WhiteOnBlack()
+	context.SetLineWidth(0.25)
+	random.Seed(0)
+
+	for r := width/2 - 20; r > 0; r -= 2 {
+		blob(context, width/2, height/2, r, percent)
+	}
+}
+
+func blob(context *cairo.Context, xc, yc, radius, percent float64) {
+	scale := 0.005
+	offset := 20.0
+	points := geom.NewPointList()
+	a := percent * blmath.Tau
+	for t := 0.0; t < blmath.Tau; t += 0.8 {
+		x := xc + math.Cos(t)*radius
+		y := yc + math.Sin(t)*radius
+		n := noise.Simplex3(x*scale, y*scale+math.Cos(a)*0.2, math.Sin(a)*0.2) * blmath.Tau
+		x += math.Cos(n) * offset
+		y += math.Sin(n) * offset
+
+		points.AddXY(x, y)
+	}
+	// context.SetSourceWhite()
+	context.SetSourceHSV(-percent*360+radius/200*90, 1, 1)
+	context.MultiLoop(points)
+	context.FillPreserve()
+	context.SetSourceBlack()
+	context.StrokeMultiLoop(points)
 }
