@@ -2,6 +2,8 @@
 package days
 
 import (
+	"math"
+
 	"github.com/bit101/bitlib/blmath"
 	cairo "github.com/bit101/blcairo"
 	"github.com/bit101/blcairo/target"
@@ -13,7 +15,7 @@ var Day13 = Day{
 	ImageHeight: 800,
 	VideoWidth:  400,
 	VideoHeight: 400,
-	VideoTime:   2,
+	VideoTime:   4,
 	RenderFrame: Day13Render,
 	Target:      target.Video,
 }
@@ -24,12 +26,36 @@ var Day13 = Day{
 //revive:disable-next-line:unused-parameter
 func Day13Render(context *cairo.Context, width, height, percent float64) {
 	context.BlackOnWhite()
-	context.Save()
-	context.TranslateCenter()
-	context.DrawAxes(0.25)
-	r := blmath.LerpSin(percent, 50, width/2)
-	sphere := cairo.NewSphere(0, 0, r, 1, 0, 0)
-	sphere.SetShadowColor(0.2, 0, 0)
-	sphere.Draw(context)
-	context.Restore()
+	context.SetLineWidth(0.5)
+
+	scenes := 6.0
+	percent *= scenes
+
+	for s := 0.0; s < scenes; s++ {
+		if percent < 1.0 {
+			renderScene(context, width, height, s, percent)
+			return
+		}
+		percent -= 1.0
+	}
+}
+
+func renderScene(context *cairo.Context, width, height, s, percent float64) {
+	for t := 0.0; t < 6; t++ {
+		x := blmath.Map(t, 0, 5, 50, 350)
+		if t == s {
+			x1 := elasticEaseOut(percent, -40, 0) + x
+			context.MoveTo(x, 0)
+			context.QuadraticCurveThrough(x1, height/2, x, height)
+		} else {
+			context.MoveTo(x, 0)
+			context.LineTo(x, height)
+		}
+		context.Stroke()
+	}
+}
+
+func elasticEaseOut(t, start, end float64) float64 {
+	t = math.Sin(-50*math.Pi/2*(t+1))*math.Pow(2, -10*t) + 1
+	return start + (end-start)*t
 }
