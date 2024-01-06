@@ -2,7 +2,10 @@
 package days
 
 import (
+	"math"
+
 	"github.com/bit101/bitlib/blmath"
+	"github.com/bit101/bitlib/random"
 	cairo "github.com/bit101/blcairo"
 	"github.com/bit101/blcairo/target"
 )
@@ -24,12 +27,41 @@ var Day10 = Day{
 //revive:disable-next-line:unused-parameter
 func Day10Render(context *cairo.Context, width, height, percent float64) {
 	context.BlackOnWhite()
-	context.Save()
-	context.TranslateCenter()
-	context.DrawAxes(0.25)
-	r := blmath.LerpSin(percent, 50, width/2)
-	sphere := cairo.NewSphere(0, 0, r, 1, 0, 0)
-	sphere.SetShadowColor(0.2, 0, 0)
-	sphere.Draw(context)
-	context.Restore()
+	context.SetLineWidth(0.5)
+	radius := 57.8
+
+	sin60r := math.Sin(math.Pi/3.0) * radius
+	xInc := 2.0 * sin60r
+	yInc := radius * 1.5
+	offset := 0.0
+	random.Seed(0)
+
+	for y := 0.0; y < height+yInc; y += yInc {
+		for x := 0.0; x < width+xInc; x += xInc {
+			r := random.FloatRange(-0.2, 0.2)
+			a := random.Angle() + percent*blmath.Tau
+			context.Save()
+			context.Translate(x+offset, y)
+			context.Rotate(math.Pi / 2)
+			drawHex(context, 0, 0, radius, a, blmath.LerpSin(percent, -r, r))
+			context.Restore()
+		}
+		if offset == 0 {
+			offset = sin60r
+		} else {
+			offset = 0
+		}
+	}
+}
+
+func drawHex(context *cairo.Context, x, y, radius, angle, rotation float64) {
+	t := 0.0
+	dx := math.Cos(angle) * 1.3
+	dy := math.Sin(angle) * 1.3
+	for r := radius; r > 2; r -= 2 {
+		context.StrokePolygon(x, y, r, 6, t)
+		t += rotation
+		x += dx
+		y += dy
+	}
 }
