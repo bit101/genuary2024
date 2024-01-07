@@ -5,6 +5,7 @@ import (
 	"github.com/bit101/bitlib/random"
 	cairo "github.com/bit101/blcairo"
 	"github.com/bit101/blcairo/target"
+	"github.com/bit101/genuary2024/util"
 )
 
 // Day11 is for genuary 11
@@ -71,4 +72,5 @@ func Day11Render(context *cairo.Context, width, height, percent float64) {
 		context.SetSourceHSV(xx/width*360, 1, 1)
 		context.Stroke()
 	}
+	util.Stampit(context, "genuary2024 day 11. Anni Albers")
 }

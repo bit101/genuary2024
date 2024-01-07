@@ -8,6 +8,7 @@ import (
 	"github.com/bit101/bitlib/random"
 	cairo "github.com/bit101/blcairo"
 	"github.com/bit101/blcairo/target"
+	"github.com/bit101/genuary2024/util"
 )
 
 // Day10 is for genuary 10
@@ -52,6 +53,7 @@ func Day10Render(context *cairo.Context, width, height, percent float64) {
 			offset = 0
 		}
 	}
+	util.Stampit(context, "genuary2024 day 10. Hexagonal")
 }
 
 func drawHex(context *cairo.Context, x, y, radius, angle, rotation float64) {

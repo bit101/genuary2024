@@ -11,7 +11,7 @@ import (
 
 func main() {
 
-	day := "day15"
+	day := "day13"
 	theDay := days.GetDay(day)
 
 	switch theDay.Target {
@@ -24,7 +24,7 @@ func main() {
 	case target.Video:
 		outfile := fmt.Sprintf("out/%s.mp4", day)
 		seconds := theDay.VideoTime
-		fps := 30
+		fps := 60
 		w := theDay.VideoWidth
 		h := theDay.VideoHeight
 		render.Frames(w, h, seconds*fps, "out/frames", theDay.RenderFrame)

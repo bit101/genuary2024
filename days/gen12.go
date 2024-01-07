@@ -10,6 +10,7 @@ import (
 	"github.com/bit101/bitlib/random"
 	cairo "github.com/bit101/blcairo"
 	"github.com/bit101/blcairo/target"
+	"github.com/bit101/genuary2024/util"
 )
 
 // Day12 is for genuary 12
@@ -35,6 +36,7 @@ func Day12Render(context *cairo.Context, width, height, percent float64) {
 	for r := width/2 - 20; r > 0; r -= 2 {
 		blob(context, width/2, height/2, r, percent)
 	}
+	util.Stampit(context, "genuary2024 day 12. Lava Lamp")
 }
 
 func blob(context *cairo.Context, xc, yc, radius, percent float64) {

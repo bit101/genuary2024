@@ -7,6 +7,7 @@ import (
 	"github.com/bit101/bitlib/blmath"
 	cairo "github.com/bit101/blcairo"
 	"github.com/bit101/blcairo/target"
+	"github.com/bit101/genuary2024/util"
 )
 
 // Day13 is for genuary 13
@@ -53,6 +54,7 @@ func renderScene(context *cairo.Context, width, height, s, percent float64) {
 		}
 		context.Stroke()
 	}
+	util.Stampit(context, "genuary2024 day 13. Wobbly function day")
 }
 
 func elasticEaseOut(t, start, end float64) float64 {
