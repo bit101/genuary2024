@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ffmpeg -i out/day13.mp4 -i out/gen13.mp3 -c copy -map 0:v:0 -map 1:a:0 out/day13plus.mp4

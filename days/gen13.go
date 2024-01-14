@@ -16,7 +16,7 @@ var Day13 = Day{
 	ImageHeight: 800,
 	VideoWidth:  400,
 	VideoHeight: 400,
-	VideoTime:   4,
+	VideoTime:   3,
 	RenderFrame: Day13Render,
 	Target:      target.Video,
 }
