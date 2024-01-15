@@ -11,7 +11,7 @@ import (
 	"github.com/bit101/bitlib/bitmap"
 	"github.com/bit101/bitlib/random"
 	"github.com/bit101/blcairo/render"
-	"github.com/go-gl/gl/v2.1/gl"
+	"github.com/go-gl/gl/v3.3-core/gl"
 	"github.com/go-gl/glfw/v3.3/glfw"
 )
 
@@ -42,8 +42,8 @@ var (
 )
 
 func main() {
-	// doit()
-	renderit()
+	doit()
+	// renderit()
 }
 
 func renderit() {
