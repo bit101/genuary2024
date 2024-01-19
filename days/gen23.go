@@ -2,6 +2,8 @@
 package days
 
 import (
+	"math"
+
 	"github.com/bit101/bitlib/blmath"
 	cairo "github.com/bit101/blcairo"
 	"github.com/bit101/blcairo/target"
@@ -9,11 +11,11 @@ import (
 
 // Day23 is for genuary 23
 var Day23 = Day{
-	ImageWidth:  800,
-	ImageHeight: 800,
-	VideoWidth:  400,
-	VideoHeight: 400,
-	VideoTime:   2,
+	ImageWidth:  30 * 32,
+	ImageHeight: 30 * 32,
+	VideoWidth:  30 * 32,
+	VideoHeight: 30 * 32,
+	VideoTime:   1,
 	RenderFrame: Day23Render,
 	Target:      target.Video,
 }
@@ -24,12 +26,20 @@ var Day23 = Day{
 //revive:disable-next-line:unused-parameter
 func Day23Render(context *cairo.Context, width, height, percent float64) {
 	context.BlackOnWhite()
-	context.Save()
-	context.TranslateCenter()
-	context.DrawAxes(0.25)
-	r := blmath.LerpSin(percent, 50, width/2)
-	sphere := cairo.NewSphere(0, 0, r, 1, 0, 0)
-	sphere.SetShadowColor(0.2, 0, 0)
-	sphere.Draw(context)
-	context.Restore()
+	context.SetLineWidth(0.75)
+	size := 30.0
+	for i := 0.0; i < 32; i++ {
+		for j := 0.0; j < 32; j++ {
+			x := i * size
+			y := j * size
+			d := math.Hypot(x-width/2, y-height/2)
+
+			context.Save()
+			r := blmath.Map(math.Sin(d*0.01-percent*blmath.Tau), -1, 1, -0.5, 0.5)
+			context.Translate(x, y)
+			context.ConcentricRects(0, 0, size, size, 2.5, r, true)
+			context.Restore()
+		}
+	}
+	context.Stroke()
 }
