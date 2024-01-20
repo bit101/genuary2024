@@ -8,6 +8,7 @@ import (
 	"github.com/bit101/bitlib/blmath"
 	cairo "github.com/bit101/blcairo"
 	"github.com/bit101/blcairo/target"
+	"github.com/bit101/genuary2024/util"
 )
 
 // Day20 is for genuary 20
@@ -58,6 +59,7 @@ func Day20Render(context *cairo.Context, width, height, percent float64) {
 		context.SetSourceBlack()
 		context.Stroke()
 	}
+	util.Stampit(context, "genuary2024, day 20, Generative typography")
 }
 
 func hit(data []byte, x, y float64) bool {
