@@ -11,7 +11,7 @@ import (
 
 func main() {
 
-	day := "day24"
+	day := "day23"
 	theDay := days.GetDay(day)
 
 	switch theDay.Target {

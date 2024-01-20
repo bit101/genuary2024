@@ -7,6 +7,7 @@ import (
 	"github.com/bit101/bitlib/blmath"
 	cairo "github.com/bit101/blcairo"
 	"github.com/bit101/blcairo/target"
+	"github.com/bit101/genuary2024/util"
 )
 
 // Day23 is for genuary 23
@@ -42,4 +43,7 @@ func Day23Render(context *cairo.Context, width, height, percent float64) {
 		}
 	}
 	context.Stroke()
+	context.SetSourceGray(0.25)
+	context.FillRectangle(0, height-20, 200, 18)
+	util.Stampit(context, "genuary2024, day 23, 32x23")
 }
