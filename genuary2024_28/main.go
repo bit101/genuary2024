@@ -18,6 +18,7 @@ func main() {
 var input *cairo.Surface
 var index = 0.0
 var encodedData []byte
+var inited = false
 
 func decode() {
 	input, _ = cairo.NewSurfaceFromPNG("encoded.png")
@@ -41,6 +42,12 @@ func decode() {
 
 //revive:disable-next-line:unused-parameter
 func scene1(context *cairo.Context, width, height, percent float64) {
+	if !inited {
+		context.WhiteOnBlack()
+		inited = true
+		context.FillText("pixel", 8, 140)
+		context.FillText("value", 7, 155)
+	}
 	context.SetAntialias(cairo.AntialiasNone)
 	context.Save()
 	context.Scale(10, 10)
@@ -80,6 +87,8 @@ func scene1(context *cairo.Context, width, height, percent float64) {
 
 	index++
 	context.Restore()
+	context.SetSourceGray(g)
+	context.FillRectangle(10, 100, 20, 20)
 }
 
 func encode() {
