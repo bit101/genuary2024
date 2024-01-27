@@ -1,0 +1,8 @@
+github.com/bit101/bitlib v0.4.12 h1:stZ33heGw72sGF86Nmcyr1KdPYxUVtzLBlcYSQFavTg=
+github.com/bit101/bitlib v0.4.12/go.mod h1:d0L7f0E8a21VD7cDuVuIsNyD4yqqxZsvgKxh5Nx433E=
+github.com/bit101/blcairo v1.2.6 h1:OToD9pk/Fs+YgqGSOfuGJP+B5mWdyPPQrNkKFMlgITc=
+github.com/bit101/blcairo v1.2.6/go.mod h1:rJ4Xk4Blq63EcWFzCDxyHsU7o/aGQo7DxpP/8oYvc0c=
+github.com/go-gl/gl v0.0.0-20231021071112-07e5d0ea2e71 h1:5BVwOaUSBTlVZowGO6VZGw2H/zl9nrd3eCZfYV+NfQA=
+github.com/go-gl/gl v0.0.0-20231021071112-07e5d0ea2e71/go.mod h1:9YTyiznxEY1fVinfM7RvRcjRHbw2xLBJ3AAGIT0I4Nw=
+github.com/go-gl/glfw/v3.3/glfw v0.0.0-20240118000515-a250818d05e3 h1:nanQfMsOs3gnuKRm0E5jXWomedE/9YIFXdmHJNZYeqc=
+github.com/go-gl/glfw/v3.3/glfw v0.0.0-20240118000515-a250818d05e3/go.mod h1:tQ2UAYgL5IevRw8kRxooKSPJfGvJ9fJQFa0TUsXzTg8=
