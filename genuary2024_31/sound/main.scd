@@ -57,8 +57,8 @@ s.waitForBoot({
 (
 Pbindef(\main,
   \instrument, \bass,
-  \dur, Prand([0.25, 0.5], inf),
-  \octave, 3,
+  \dur, Prand([0.5, 0.5], inf),
+  \octave, 4,
   \degree, Prand((0..8), inf),
   \amp, 0.5,
   \out, ~reverbBus,
@@ -71,14 +71,17 @@ Pbindef(\main).stop
 Pbindef(\pad,
   \instrument, \pad,
   \dur, Prand([2.0, 4.0], inf),
-  \octave, 4,
+  \octave, 5,
   \degree, Prand((0..8), inf),
-  \amp, 0.03,
+  \amp, 0.02,
   \out, ~reverbBus,
 );
 )
 Pbindef(\pad).play
 Pbindef(\pad).stop
+
+s.record
+s.stopRecording
 
 ~reverb.set(\room, 0.7)
 ~delay.set(\delay, 0)
